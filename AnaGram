@@ -1,0 +1,34 @@
+package LeetCode75;
+
+import java.util.Arrays;
+
+public class AnaGram {
+	 
+	    public static boolean isAnagram(String s, String t) {
+	        if(s.length() != t.length()){
+	            return false;
+	        }
+	       /* HashMap<Character,Integer> countS= new HashMap<>();
+	        HashMap<Character,Integer> countT= new HashMap<>();
+	        for(int i=0;i < s.length;i++){
+	            countS.put(s.charAt(i),
+	                countS.getOrDefault(s.charAt(i),0));
+	                */
+
+	                char[] sSort = s.toCharArray();
+	                char[] tSort = t.toCharArray();
+	                Arrays.sort(sSort);
+	                Arrays.sort(tSort);
+	                return Arrays.equals(sSort,tSort);
+	        }
+	    
+public static void main(String[] args) {
+	String s= "tarter";
+	String t = "tertar";
+	boolean booleanVal =  isAnagram(s, t);
+	System.out.println(booleanVal ? "Strings are Anagrams yes! " :"Strings are not Anagrams :( ");
+
+}
+	 
+
+}
